@@ -9,7 +9,11 @@ namespace ShipmentLocator
         public Login()
         {
             InitializeComponent();
+
+            var iCount = 1;
+            iCount += 1;
         }
+        
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
