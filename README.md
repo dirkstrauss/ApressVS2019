@@ -1,2 +1,2 @@
 # ApressVS2019
-Getting Started in Visua Studio 2019 - Apress
+Getting Started in Visual Studio 2019 - Apress
