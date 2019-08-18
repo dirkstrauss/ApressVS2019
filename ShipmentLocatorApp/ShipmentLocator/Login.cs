@@ -9,9 +9,6 @@ namespace ShipmentLocator
         public Login()
         {
             InitializeComponent();
-
-            var iCount = 1;
-            iCount += 1;
         }
         
 

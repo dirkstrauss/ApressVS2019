@@ -25,6 +25,7 @@ namespace ShipmentLocator
                 if (WaybillValid())
                 {
                     var package = new Package(waybillNum);
+                                                                                                                                    
                     var packLoc = package.TrackPackage();
                     if (packLoc != null)
                     {
@@ -57,8 +58,7 @@ namespace ShipmentLocator
 
             return new Random(result).Next(min, max);
         }
-
-
+        
         private bool WaybillValid()
         {
             return txtWaybill.Text.ToLower().Contains("acme-");
