@@ -15,6 +15,7 @@ namespace ShipmentLocator
             _ = frmLogin.ShowDialog();
 
             txtWaybill.Text = GenerateWaybill(WBPartA(), WBPartB(100,2000));
+            this.Text = $"Shipment Locator - {DateTime.Now.Year}";
         }
 
         private void BtnTrack_Click(object sender, EventArgs e)
@@ -40,7 +41,6 @@ namespace ShipmentLocator
                     _ = MessageBox.Show("You have entered an invalid Waybill number");
                 }
             }
-
         }
 
         //private bool WaybillValid() => txtWaybill.Text.ToLower().Contains("acme-");
