@@ -101,6 +101,10 @@
       <Project>{e08adee6-3aef-4a7f-81e1-5354a52abbbf}</Project>
       <Name>Tracking</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VisualStudioUnitTesting\VisualStudioUnitTesting.csproj">
+      <Project>{61f580e6-53bd-4358-a36f-89db2a0dbb0f}</Project>
+      <Name>VisualStudioUnitTesting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

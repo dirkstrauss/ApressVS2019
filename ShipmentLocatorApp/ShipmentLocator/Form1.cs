@@ -1,7 +1,9 @@
 ﻿using ShipmentTracking;
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using VisualStudioUnitTesting;
 
 namespace ShipmentLocator
 {
@@ -16,6 +18,8 @@ namespace ShipmentLocator
 
             txtWaybill.Text = GenerateWaybill(WBPartA(), WBPartB(100,2000));
             this.Text = $"Shipment Locator - {DateTime.Now.Year}";
+
+            _ = DetermineShipLimits();
         }
 
         private void BtnTrack_Click(object sender, EventArgs e)
@@ -62,6 +66,30 @@ namespace ShipmentLocator
         private bool WaybillValid()
         {
             return txtWaybill.Text.ToLower().Contains("acme-");
+        }
+
+        public bool DetermineShipLimits()
+        {
+            var containerList = new List<Container>();
+
+            for (var i = 0; i <= 10; i++)
+            {
+                var container = new Container();
+                container.Weight = 7.5 * i;
+                containerList.Add(container);
+            }
+
+            var ship = new ContainerShip(500.00);
+            //ship.MaxWeight = 500.00;
+            ship.Containers = containerList;
+            var val = ship.CalculateHarborFee(ContainerClass.FourtyFoot, FeeExempt.Variable);
+
+
+            Calculate cal = new Calculate();
+            _ = cal.ShippingCost(0, 0, 0, Calculate.ShippingType.Overnight);
+
+            return ship.ShipOverweight();
+
         }
     }
 }
